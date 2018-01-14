@@ -5,6 +5,11 @@
 * [Reactive](#reactive)
 * [Declarative Rendering](#declarative-rendering)
 * [Data & Methods](#data-and-methods)
+* Directives
+  * Binding to Attributes
+  * Listening to Events
+  * Directives Modifiers
+    * Directives Keys Modifiers
 
 ## Reactive
 
@@ -47,7 +52,7 @@ console.log(user.score)
 
 ```html
 <div id="app">
-  {{ message }}
+  Mustache: {{ message }}
 </div>
 ```
 
