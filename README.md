@@ -33,6 +33,7 @@
 * Install via npm & create webpack config
 * Use the vue-cli tool along with webpack
 * Install using the Bower client side package manager
+* Using in the Laravel via laravel-mix
 
 ## Addtional Tools & Plugins
 
