@@ -2,6 +2,9 @@
 
 ## Table of Contents
 
+* [What Vue offers](#what-vue-offers)
+* [Using vuejs](#using-vuejs)
+* [Addtional Tools & Plugins](#addtional-tools-&-plugins)
 * [Reactive](#reactive)
 * [Declarative Rendering](#declarative-rendering)
 * [Data & Methods](#data-and-methods)
@@ -10,6 +13,36 @@
   * Listening to Events
   * Directives Modifiers
     * Directives Keys Modifiers
+
+## What Vue offers
+
+* Reactive Interfaces
+* Declarative Rendering
+* Data Binding
+* Directives
+* Template Logic
+* Components & Nesting
+* Event Handling
+* Computed Properties
+* CSS Transition & Animation
+* Custom Filters
+
+## Using vuejs
+
+* Include the <script> tag in an html file
+* Install via npm & create webpack config
+* Use the vue-cli tool along with webpack
+* Install using the Bower client side package manager
+
+## Addtional Tools & Plugins
+
+* vue-router - Official router deeply integrated with Vue.js core
+* vue-resource - Handle web requests
+* vue-async-data - Async data loading
+* vue-validator - Form validation plugin
+* vue-dev-tools - Chrome devtools extension
+* vue-touch - Touch gestures using Hammer.js
+* vuex - Vuex is a state management pattern + library
 
 ## Reactive
 
@@ -43,7 +76,6 @@ let user = {
 createReactiveObject(user)
 
 user.name = 'Changed'
-console.log(user.score)
 ```
 
 ## Declarative Rendering
