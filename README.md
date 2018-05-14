@@ -2,17 +2,26 @@
 
 ## Table of Contents
 
+* [Why Vue](#why-vue)
 * [What Vue offers](#what-vue-offers)
 * [Using vuejs](#using-vuejs)
 * [Addtional Tools & Plugins](#addtional-tools-&-plugins)
 * [Reactive](#reactive)
 * [Declarative Rendering](#declarative-rendering)
+* [Component Lifecycle](#component-lifecycle)
 * [Data & Methods](#data-and-methods)
 * Directives
   * Binding to Attributes
   * Listening to Events
   * Directives Modifiers
     * Directives Keys Modifiers
+
+## Why Vue
+
+* Easy to learn
+* Easy to use
+* Easy to maintain
+* Fast
 
 ## What Vue offers
 
@@ -49,34 +58,34 @@
 
 ```javascript
 function createReactiveObject(obj) {
-  const keys = Object.keys(obj)
-  obj.$data = Object.assign({}, obj)
+  const keys = Object.keys(obj);
+  obj.$data = Object.assign({}, obj);
   keys.forEach(key => {
     Object.defineProperty(obj, key, {
       get: reactiveGetter.bind(obj, key),
       set: reactiveSetter.bind(obj, key)
-    })
-  })
+    });
+  });
 }
 
 function reactiveSetter(property, value) {
-  this.$data[property] = value
-  console.log(`${property} changed to ${value}`)
+  this.$data[property] = value;
+  console.log(`${property} changed to ${value}`);
 }
 
 function reactiveGetter(property) {
-  console.log(`get ${property}`)
-  return this.$data[property]
+  console.log(`get ${property}`);
+  return this.$data[property];
 }
 
 let user = {
-  name: '',
+  name: "",
   score: 0
-}
+};
 
-createReactiveObject(user)
+createReactiveObject(user);
 
-user.name = 'Changed'
+user.name = "Changed";
 ```
 
 ## Declarative Rendering
@@ -93,11 +102,35 @@ user.name = 'Changed'
 
 ```javascript
 var app = new Vue({
-  el: '#app',
+  el: "#app",
   data: {
-    message: 'Hello Vue!'
+    message: "Hello Vue!"
   }
-})
+});
+```
+
+# Component Lifecycle
+
+```
+- creation
+  * beforeCreate
+  - Initialize State
+  * created
+===== Complie Template =====
+- mounting
+  * beforeMount
+  - Create Virtual Dom
+  * mounted
+===== Listen for Data Changes =====
+- updating
+  * beforeUpdate
+  - Re-Render Virtual DOM and patch
+  * updated
+===== When vm.$destroy() is called =====
+- detroy
+  * beforeDestroy
+  - Teardown Virtual DOM
+  * destroyed
 ```
 
 ## Data and methods
@@ -115,14 +148,14 @@ var app = new Vue({
 
 ```javascript
 new Vue({
-  el: '#app',
+  el: "#app",
   data: {
-    name: ''
+    name: ""
   },
   methods: {
     changedName(event) {
-      this.name = event.target.value
+      this.name = event.target.value;
     }
   }
-})
+});
 ```
